@@ -1,1018 +1,1665 @@
 <?xml version="1.0"?>
-
-
-<!DOCTYPE rdf:RDF [
-    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
-    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
-    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
-    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
-    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
-    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
-]>
-
-
-<rdf:RDF xmlns="http://streamreasoning.org/onto/lass.owl#"
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
      xml:base="http://streamreasoning.org/onto/lass.owl"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace">
-    <owl:Ontology rdf:about="http://streamreasoning.org/onto/lass.owl">
-        <rdfs:label>Lass Ontology</rdfs:label>
-        <owl:versionInfo>Lass owl ontollogy, version 17 April 2016</owl:versionInfo>
-        <rdfs:comment>A social media ontology for Stream Reasoning tests</rdfs:comment>
-    </owl:Ontology>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
-
-    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
-    
-
-
-    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
-
-    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#deprecated -->
-
-    <owl:AnnotationProperty rdf:about="&owl;deprecated"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#priorVersion -->
-
-    <owl:AnnotationProperty rdf:about="&owl;priorVersion"/>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
-
-    <owl:AnnotationProperty rdf:about="&owl;versionInfo"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Datatypes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
-
-    <rdfs:Datatype rdf:about="&rdf;PlainLiteral"/>
-    
-
-
-    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
-
-    <rdfs:Datatype rdf:about="&xsd;boolean"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#contains -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#contains">
-        <rdfs:comment>prev None</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#expertIn -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#expertIn">
-        <rdfs:label>is expert in</rdfs:label>
-        <rdfs:comment>prev teachingAssistantOf</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Expert"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Topic"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#hasEventTag -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#hasEventTag">
-        <rdfs:label>has event tag</rdfs:label>
-        <rdfs:comment>prev researchProject</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Event"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Tag"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#hasMember -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#hasMember">
-        <rdfs:label>has member</rdfs:label>
-        <rdfs:comment>prev hasAlumnus</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Site"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#interestedIn -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#interestedIn">
-        <rdfs:label>is interested in</rdfs:label>
-        <rdfs:comment>prev takesCourse</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#involvedIn -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#involvedIn">
-        <rdfs:label>is involved in</rdfs:label>
-        <rdfs:comment>prev memberOF
-</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isActiveMemberOf -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isActiveMemberOf">
-        <rdfs:label>is active member of</rdfs:label>
-        <rdfs:comment>prev doctoralDegreeFrom</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Site"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#isMemberOf"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isFollowedBy -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isFollowedBy">
-        <rdfs:label>is followed by</rdfs:label>
-        <rdfs:comment>prev tenured</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isInfluencedBy -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isInfluencedBy">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:label>is being advised by</rdfs:label>
-        <rdfs:comment>prev isadvisedby</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isMemberOf -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isMemberOf">
-        <rdfs:label>is member of</rdfs:label>
-        <rdfs:comment>prev hasDegreeFrom
-</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Site"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <owl:inverseOf rdf:resource="http://streamreasoning.org/onto/lass.owl#hasMember"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isProminentOf -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isProminentOf">
-        <rdfs:label>is prominent member of</rdfs:label>
-        <rdfs:comment>prev undergraduateDegreeFrom</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Site"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#isMemberOf"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isReactionTo -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isReactionTo">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:label>is reaction to</rdfs:label>
-        <rdfs:comment>prev softwareVersion
-not transitive</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Reaction"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isSharing -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isSharing">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:label>is sharing</rdfs:label>
-        <rdfs:comment>prev softwaredocumentation</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Reaction"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isTaggedWith -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isTaggedWith">
-        <rdfs:label>is tagged with</rdfs:label>
-        <rdfs:comment>prev publicationResearch
-not subClass of contains</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Tag"/>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#contains"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isTechnicalMemberOf -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isTechnicalMemberOf">
-        <rdfs:label>is technical  member of</rdfs:label>
-        <rdfs:comment>prev mastersDegreeFrom</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Site"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#isMemberOf"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#isVisitedBy -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#isVisitedBy">
-        <rdfs:label>is visited by</rdfs:label>
-        <rdfs:comment>prev member</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <owl:inverseOf rdf:resource="http://streamreasoning.org/onto/lass.owl#involvedIn"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#leads -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#leads">
-        <rdfs:label>leads</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#participates"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#participates -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#participates">
-        <rdfs:label>participates</rdfs:label>
-        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/onto/lass.owl#involvedIn"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#perfomerdOn -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#perfomerdOn">
-        <rdfs:label>performed on</rdfs:label>
-        <rdfs:comment>previous publicationDate</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#performedBy -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#performedBy">
-        <rdfs:label>performed by</rdfs:label>
-        <rdfs:comment>previous publicationAuthor</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#postsAbout -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#postsAbout">
-        <rdfs:label>posts about</rdfs:label>
-        <rdfs:comment>prev teacherOf</rdfs:comment>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Contributor"/>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Topic"/>
-        <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description>
-                <owl:inverseOf rdf:resource="http://streamreasoning.org/onto/lass.owl#performedBy"/>
-            </rdf:Description>
-            <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#contains"/>
-        </owl:propertyChainAxiom>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#subCommunityOf -->
-
-    <owl:ObjectProperty rdf:about="http://streamreasoning.org/onto/lass.owl#subCommunityOf">
-        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
-        <rdfs:label>is sub community of</rdfs:label>
-        <rdfs:comment>previous lubm:subOrganizationOf</rdfs:comment>
-        <rdfs:range rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
-
-    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Data properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#age -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#age">
-        <rdfs:label>is age</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#emailAddress -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#emailAddress">
-        <rdfs:label>email</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#followersNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#followersNumber">
-        <rdfs:label>followers</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#followingNumber -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#followingNumber">
-        <rdfs:label>following number</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#friends -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#friends">
-        <rdfs:label>firends number</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subPropertyOf rdf:resource="&owl;topDataProperty"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#username -->
-
-    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/onto/lass.owl#username">
-        <rdfs:label>username</rdfs:label>
-        <rdfs:domain rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Action -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Action">
-        <rdfs:label>Action</rdfs:label>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#performedBy"/>
-                <owl:onClass rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:seeAlso>http://schema.org/Action</rdfs:seeAlso>
-        <rdfs:comment>An action performed by an user within a community</rdfs:comment>
-        <rdfs:comment>previous lubm:Publication
-</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Attendee -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Attendee">
-        <rdfs:label>Attendee</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#participates"/>
-                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Event"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>an user who attends an event</rdfs:comment>
-        <rdfs:comment>prev ResearchAssistant</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Comment -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Comment">
-        <rdfs:label>Comment</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#Post"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#isReactionTo"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:seeAlso>http://rdfs.org/sioc/types#Comment</rdfs:seeAlso>
-        <rdfs:comment>Specific kind of posts that belongs to other post to exist</rdfs:comment>
-        <rdfs:comment>Previous Book</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Commercial -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Commercial">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:comment>An user account that belongs to a commercial activity e.g. a page on Facebook</rdfs:comment>
-        <rdfs:comment>prev AssistantProfessor</rdfs:comment>
-        <rdfs:comment>Commercial</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Community -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Community">
-        <rdfs:label>Community</rdfs:label>
-        <rdfs:comment>A Community may consist of people, sites, discussion, topics, threads, events joined by a common topic, interests or goals.
-
-</rdfs:comment>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Community</rdfs:seeAlso>
-        <rdfs:comment>previous lubm:organization
-</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Concept -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Concept">
-        <rdfs:label>Concept</rdfs:label>
-        <rdfs:comment>previous lubm:Work</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Contributor -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Contributor">
-        <rdfs:label>Contributor</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Prominent"/>
-        <rdfs:comment>an user who actively participates into a community</rdfs:comment>
-        <rdfs:comment>prev Faculty</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Discussion -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Discussion">
-        <rdfs:label>Discussion</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:comment>In a discussion users have the option of responding to one another directly. 
-There may be a general topic. A discussion is a group conversation with simultaneous side conversations.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#DiscussionLeader -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#DiscussionLeader">
-        <rdfs:label>DiscussionLeader</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#User"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#leads"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Discussion"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:comment>Person who introduces topic of discussion and leads the discussion.</rdfs:comment>
-        <rdfs:comment>prev Chair</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Event -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Event">
-        <rdfs:label>Event</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:comment>prev ResearchGroup</rdfs:comment>
-        <rdfs:comment>something that occurs in a certain place during a particular time:</rdfs:comment>
-        <rdfs:seeAlso>http://schema.org/Event</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Expert -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Expert">
-        <rdfs:label>Expert</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#User"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#expertIn"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Topic"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>prev university teaching assistant</rdfs:comment>
-        <rdfs:comment>a person who has special skill or knowledge in a particular field.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Influencer -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Influencer">
-        <rdfs:label>Influencer</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Contributor"/>
-        <rdfs:comment>An user who can influence other users in the community</rdfs:comment>
-        <rdfs:comment>prev Professor</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Involved -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Involved">
-        <rdfs:label>An user who is involved in a discussion.
-
-http://www.wordreference.com/definition/involved</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Contributor"/>
-        <rdfs:comment>prev lecturer</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#LegalContributor -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#LegalContributor">
-        <rdfs:label>Legal</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#TechnicalMember"/>
-        <rdfs:comment>pre ClericalStaff</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Like -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Like">
-        <rdfs:label>Like</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Reaction"/>
-        <owl:disjointWith rdf:resource="http://streamreasoning.org/onto/lass.owl#Post"/>
-        <rdfs:seeAlso>http://schema.org/UserLikes</rdfs:seeAlso>
-        <rdfs:comment>previous Manual</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Maintainer -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Maintainer">
-        <rdfs:label>Maintainer</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#TechnicalMember"/>
-        <rdfs:comment>prev SystemsStaff</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#MediaPost -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#MediaPost">
-        <rdfs:label>MediaPost</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Post"/>
-        <rdfs:comment>previous ConferencePaper</rdfs:comment>
-        <rdfs:comment>A post that contains an Image/Video/Audio like http://schema.org/MediaObject</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#MentionPost -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#MentionPost">
-        <rdfs:label>MentionPost</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Post"/>
-        <rdfs:comment>previous TechnicalReport</rdfs:comment>
-        <rdfs:comment>A Post that contains an user as content </rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Micropost -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Micropost">
-        <rdfs:label>MicroPost</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Post"/>
-        <rdfs:seeAlso>http://rdfs.org/sioc/types#MicroblogPost</rdfs:seeAlso>
-        <rdfs:comment>previous JournalArticle</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Moderator -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Moderator">
-        <rdfs:label>Moderator</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#User"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#leads"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#UserGroup"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>Person who presides an Usergroup.</rdfs:comment>
-        <rdfs:comment>prev Director</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#News -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#News">
-        <rdfs:label>News Account</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:comment>prev FullProfessor</rdfs:comment>
-        <rdfs:comment>An user account who officially posts news and press articles</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#OpinionMaker -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#OpinionMaker">
-        <rdfs:label>dean</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#leads"/>
-                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Thread"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:comment>prev Dean</rdfs:comment>
-        <rdfs:comment>Person who introduces a sub-topic in a discussion, opens a thread, and leads the thread .</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#PopularPost -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#PopularPost">
-        <rdfs:label>PopularPost</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#Post"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#performedBy"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:comment>A post that is become popular for the discussion</rdfs:comment>
-        <rdfs:comment>previous UnofficialPublication</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Post -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Post">
-        <rdfs:label>Post</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#performedBy"/>
-                <owl:onClass rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Post</rdfs:seeAlso>
-        <rdfs:seeAlso>A Post is an action performed by a User that contains topic, text, tags or metions. A series of Posts may be a thread/discussion if they share a common topic and are connected by reply or by date relationships.</rdfs:seeAlso>
-        <rdfs:comment>previous Article</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Prominent -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Prominent">
-        <rdfs:label>Prominent</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#User"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#participates"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>prev Employee</rdfs:comment>
-        <rdfs:comment>An user with a particular role within a community</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Reaction -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Reaction">
-        <rdfs:label>Reaction</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:comment>previous Software</rdfs:comment>
-        <rdfs:seeAlso>A reaction is an action performed by a User that is related to another action and so it logically happens after.</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#SharedPost -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#SharedPost">
-        <rdfs:label>SharedPost</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#Post"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#isSharing"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Post"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Action"/>
-        <rdfs:comment>previous Specification</rdfs:comment>
-        <rdfs:comment>A Shared Post is an action performed by a User that contains a post previously performed by another user, so it logically happens after the original post.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Site -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Site">
-        <rdfs:label>Site</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:comment>A Site can be the location of an online community or set of communities.</rdfs:comment>
-        <rdfs:comment>prev University</rdfs:comment>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Site</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Stakeholder -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Stakeholder">
-        <rdfs:label>Stakeholder</rdfs:label>
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#User"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#interestedIn"/>
-                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#Topic"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment>A user who is interest in some topic</rdfs:comment>
-        <rdfs:comment>prev Student</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Tag -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Tag">
-        <rdfs:label>Tag</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Concept"/>
-        <rdfs:comment>previous Research</rdfs:comment>
-        <rdfs:seeAlso>http://rdfs.org/sioc/types#Tag</rdfs:seeAlso>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#TechnicalMember -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#TechnicalMember">
-        <rdfs:label>TechnicalMember</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Prominent"/>
-        <rdfs:comment>prev AdministrativeStaff</rdfs:comment>
-        <rdfs:comment>A user whose technical skills are appreciated/used by the community, e.g. a website maintainer.</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Thread -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Thread">
-        <rdfs:label>Thread</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:comment>previous College</rdfs:comment>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Thread</rdfs:seeAlso>
-        <rdfs:comment>In a  discussion, subtopics emerge as users respond to specific postings. These secondary postings are the &quot;threads&quot; that spin off from the main discussion.
-</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#Topic -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#Topic">
-        <rdfs:label>Topic</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Concept"/>
-        <rdfs:comment>a subject of discussion</rdfs:comment>
-        <rdfs:comment>previous Course</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#TopicFollower -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#TopicFollower">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Stakeholder"/>
-        <rdfs:comment>A user who is interested in a specific topic</rdfs:comment>
-        <rdfs:comment>TopicFollower</rdfs:comment>
-        <rdfs:comment>prev UndergraduateStudent</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#TrendingTopic -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#TrendingTopic">
-        <rdfs:label>TrendingTopic</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Topic"/>
-        <rdfs:comment>prev GraduateCourse</rdfs:comment>
-        <rdfs:comment>a popular subject of discussion:</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#TrendingTopicFollower -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#TrendingTopicFollower">
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#User"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://streamreasoning.org/onto/lass.owl#interestedIn"/>
-                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/onto/lass.owl#TrendingTopic"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment>an user who is interested in a trending topic</rdfs:comment>
-        <rdfs:comment>prev graduate student</rdfs:comment>
-        <rdfs:comment>TT Follower</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#User -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#User">
-        <rdfs:label>User</rdfs:label>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_UserAccount</rdfs:seeAlso>
-        <rdfs:comment>previous lubm:Person
-</rdfs:comment>
-        <rdfs:comment>An user account in an online community site. 
-
-</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#UserGroup -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#UserGroup">
-        <rdfs:label>Usergroup</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Community"/>
-        <rdfs:comment>A set of UserAccounts whose owners have a common purpose or interest. Can be used for access control purposes. 
-
-</rdfs:comment>
-        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Usergroup</rdfs:seeAlso>
-        <rdfs:comment>prev Program</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://streamreasoning.org/onto/lass.owl#VIP -->
-
-    <owl:Class rdf:about="http://streamreasoning.org/onto/lass.owl#VIP">
-        <rdfs:label>An user that is popular either within the community, e.g. an account with 1Bilion followers on twitter, or who is popular outside like a MoiveStar. </rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/onto/lass.owl#Influencer"/>
-        <rdfs:comment>prev AssociateProfessor</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#name">
-        <rdfs:label>name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#officeNumber">
-        <rdfs:label>office room No.</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://streamreasoning.org/onto/lass.owl#researchInterest">
-        <rdfs:label>is researching</rdfs:label>
-    </rdf:Description>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://streamreasoning.org/onto/lass.owl">
+    <Prefix name="" IRI="http://streamreasoning.org/onto/lass.owl#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lass owl ontollogy, version 17 April 2016</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A social media ontology for Stream Reasoning tests</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lass Ontology</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Reaction"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#followersNumber"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Event"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Contributor"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#username"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatedTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#friends"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Like"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#postsAbout"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isVisitedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Micropost"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#News"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEventTag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stakeholder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TopicFollower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Topic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isInfluencedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OpinionMaker"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalMember"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#performedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Involved"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MentionPost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isReactionTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#expertIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Post"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#interestedIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Moderator"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#perfomedOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#subCommunityOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Discussion"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Action"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrendingTopic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrendingTopicFollower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Influencer"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isFollowedBy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#age"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#involvedIn"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attendee"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Commercial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thread"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMember"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Community"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VIP"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActiveMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTechnicalMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isTaggedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isProminentMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#emailAddress"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Site"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#participates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PopularPost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#leads"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isSharing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaPost"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LegalContributor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maintainer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Prominent"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiscussionLeader"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SharedPost"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#followingNumber"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Expert"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Comment"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Post"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isReactionTo"/>
+                <Class IRI="#Action"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#DiscussionLeader"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#leads"/>
+                <Class IRI="#Discussion"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Expert"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#expertIn"/>
+                <Class IRI="#Topic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Moderator"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#leads"/>
+                <Class IRI="#UserGroup"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OpinionMaker"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#leads"/>
+            <Class IRI="#Thread"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#PopularPost"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Post"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#performedBy"/>
+                <Class IRI="#Influencer"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Prominent"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#participates"/>
+                <Class IRI="#Community"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#SharedPost"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Post"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#isSharing"/>
+                <Class IRI="#Post"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stakeholder"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#User"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#interestedIn"/>
+                <Class IRI="#Topic"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Action"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#performedBy"/>
+            <Class IRI="#User"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attendee"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attendee"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#participates"/>
+            <Class IRI="#Event"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comment"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Commercial"/>
+        <Class IRI="#Influencer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Contributor"/>
+        <Class IRI="#Prominent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Discussion"/>
+        <Class IRI="#Community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiscussionLeader"/>
+        <Class IRI="#Influencer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Event"/>
+        <Class IRI="#Community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Influencer"/>
+        <Class IRI="#Contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Involved"/>
+        <Class IRI="#Contributor"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LegalContributor"/>
+        <Class IRI="#TechnicalMember"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Like"/>
+        <Class IRI="#Reaction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maintainer"/>
+        <Class IRI="#TechnicalMember"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaPost"/>
+        <Class IRI="#Post"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MentionPost"/>
+        <Class IRI="#Post"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Micropost"/>
+        <Class IRI="#Post"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#News"/>
+        <Class IRI="#Influencer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OpinionMaker"/>
+        <Class IRI="#Influencer"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PopularPost"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Post"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Post"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#performedBy"/>
+            <Class IRI="#User"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reaction"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SharedPost"/>
+        <Class IRI="#Action"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Site"/>
+        <Class IRI="#Community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tag"/>
+        <Class IRI="#Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalMember"/>
+        <Class IRI="#Prominent"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thread"/>
+        <Class IRI="#Community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Topic"/>
+        <Class IRI="#Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TopicFollower"/>
+        <Class IRI="#Stakeholder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrendingTopic"/>
+        <Class IRI="#Topic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrendingTopicFollower"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrendingTopicFollower"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#interestedIn"/>
+            <Class IRI="#TrendingTopic"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserGroup"/>
+        <Class IRI="#Community"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VIP"/>
+        <Class IRI="#Influencer"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#Like"/>
+        <Class IRI="#Post"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isActiveMemberOf"/>
+        <ObjectProperty IRI="#isMemberOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isProminentMemberOf"/>
+        <ObjectProperty IRI="#isMemberOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTaggedWith"/>
+        <ObjectProperty IRI="#contains"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#isTechnicalMemberOf"/>
+        <ObjectProperty IRI="#isMemberOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#leads"/>
+        <ObjectProperty IRI="#participates"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#participates"/>
+        <ObjectProperty IRI="#involvedIn"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasMember"/>
+        <ObjectProperty IRI="#isMemberOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#involvedIn"/>
+        <ObjectProperty IRI="#isVisitedBy"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#isReactionTo"/>
+        <ObjectProperty IRI="#relatedTo"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isInfluencedBy"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isReactionTo"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#isSharing"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#subCommunityOf"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#expertIn"/>
+        <Class IRI="#Expert"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEventTag"/>
+        <Class IRI="#Event"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMember"/>
+        <Class IRI="#Site"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isActiveMemberOf"/>
+        <Class IRI="#Contributor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isFollowedBy"/>
+        <Class IRI="#Influencer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isInfluencedBy"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isMemberOf"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isProminentMemberOf"/>
+        <Class IRI="#Prominent"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isReactionTo"/>
+        <Class IRI="#Reaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isSharing"/>
+        <Class IRI="#Reaction"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTaggedWith"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isTechnicalMemberOf"/>
+        <Class IRI="#TechnicalMember"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isVisitedBy"/>
+        <Class IRI="#Community"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#perfomedOn"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#performedBy"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#postsAbout"/>
+        <Class IRI="#Contributor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#relatedTo"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#subCommunityOf"/>
+        <Class IRI="#Community"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#expertIn"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEventTag"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasMember"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isActiveMemberOf"/>
+        <Class IRI="#Site"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isInfluencedBy"/>
+        <Class IRI="#Influencer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isMemberOf"/>
+        <Class IRI="#Site"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isProminentMemberOf"/>
+        <Class IRI="#Site"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isReactionTo"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isSharing"/>
+        <Class IRI="#Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTaggedWith"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isTechnicalMemberOf"/>
+        <Class IRI="#Site"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isVisitedBy"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#performedBy"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#postsAbout"/>
+        <Class IRI="#Topic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#relatedTo"/>
+        <Class IRI="#Reaction"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#subCommunityOf"/>
+        <Class IRI="#Community"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="#performedBy"/>
+            </ObjectInverseOf>
+            <ObjectProperty IRI="#contains"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#postsAbout"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#friends"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#age"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#emailAddress"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#followersNumber"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#followingNumber"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#friends"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#username"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An action performed by an user within a community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:Publication
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Action</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/Action</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Attendee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">an user who attends an event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Attendee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev ResearchAssistant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Attendee</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Attendee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Comment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Previous Book</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Comment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specific kind of posts that belongs to other post to exist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Comment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Comment</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#Comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Commercial</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account that belongs to a commercial activity e.g. a page on Facebook</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Commercial</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Commercial</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Commercial</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev AssistantProfessor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Community</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Community may consist of people, sites, discussion, topics, threads, events joined by a common topic, interests or goals.
+
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Community</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:organization
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Community</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Community</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Concept</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:Work</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Concept</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Concept</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Contributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">an user who actively participates into a community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Contributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Faculty</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Contributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Contributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Discussion</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">In a discussion users have the option of responding to one another directly. 
+There may be a general topic. A discussion is a group conversation with simultaneous side conversations.
+
+prev lubm:Department</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Discussion</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Discussion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DiscussionLeader</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who introduces topic of discussion and leads the discussion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DiscussionLeader</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Chair</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#DiscussionLeader</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DiscussionLeader</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev ResearchGroup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">something that occurs in a certain place during a particular time:</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Event</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/Event</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Expert</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a person who has special skill or knowledge in a particular field.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Expert</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev university teaching assistant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Expert</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Expert</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Influencer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who can influence other users in the community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Influencer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Professor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Influencer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Influencer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Involved</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev lecturer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Involved</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who is involved in a discussion.
+
+http://www.wordreference.com/definition/involved</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LegalContributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">pre ClericalStaff</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#LegalContributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Legal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Like</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Manual</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Like</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Like</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Like</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/UserLikes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Maintainer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev SystemsStaff</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Maintainer</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediaPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A post that contains an Image/Video/Audio like http://schema.org/MediaObject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MediaPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous ConferencePaper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MediaPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MediaPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MentionPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Post that contains an user as content </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MentionPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous TechnicalReport</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MentionPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MentionPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Micropost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous JournalArticle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Micropost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MicroPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Micropost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#MicroblogPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Moderator</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who presides an Usergroup.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Moderator</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Director</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Moderator</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Moderator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#News</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account who officially posts news and press articles</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#News</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev FullProfessor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#News</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">News Account</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpinionMaker</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who introduces a sub-topic in a discussion, opens a thread, and leads the thread .</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OpinionMaker</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Dean</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OpinionMaker</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">dean</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PopularPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A post that is become popular for the discussion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PopularPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous UnofficialPublication</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#PopularPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PopularPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Post</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Article</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Post</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Post</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Post</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Post is an action performed by a User that contains topic, text, tags or metions. A series of Posts may be a thread/discussion if they share a common topic and are connected by reply or by date relationships.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Post</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Post</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Prominent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user with a particular role within a community</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Prominent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Employee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Prominent</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Prominent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Reaction</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Software</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Reaction</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Reaction</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Reaction</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A reaction is an action performed by a User that is related to another action and so it logically happens after.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SharedPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Shared Post is an action performed by a User that contains a post previously performed by another user, so it logically happens after the original post.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SharedPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Specification</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SharedPost</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SharedPost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Site</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Site can be the location of an online community or set of communities.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Site</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev University</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Site</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Site</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stakeholder</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user who is interest in some topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stakeholder</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Student</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stakeholder</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stakeholder</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tag</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Research</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tag</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Tag</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#Tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TechnicalMember</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user whose technical skills are appreciated/used by the community, e.g. a website maintainer.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TechnicalMember</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev AdministrativeStaff</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TechnicalMember</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TechnicalMember</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thread</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">In a  discussion, subtopics emerge as users respond to specific postings. These secondary postings are the &quot;threads&quot; that spin off from the main discussion.
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thread</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous College</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Thread</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Thread</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#Thread</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Thread</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Topic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a subject of discussion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Topic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous Course</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Topic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user who is interested in a specific topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TopicFollower</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev UndergraduateStudent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrendingTopic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a popular subject of discussion:</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrendingTopic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev GraduateCourse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TrendingTopic</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TrendingTopic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrendingTopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TT Follower</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrendingTopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">an user who is interested in a trending topic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TrendingTopicFollower</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev graduate student</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account in an online community site. 
+
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:Person
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">User</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#User</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_UserAccount</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserGroup</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A set of UserAccounts whose owners have a common purpose or interest. Can be used for access control purposes. 
+
+</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserGroup</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Program</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#UserGroup</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Usergroup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
+        <IRI>#UserGroup</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Usergroup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VIP</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev AssociateProfessor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#VIP</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user that is popular either within the community, e.g. an account with 1Bilion followers on twitter, or who is popular outside like a MoiveStar. </Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#age</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is age</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contains</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action contains another generic entity e.g. A Post containing the citation of another Post
+
+prev None</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#contains</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">contains</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#emailAddress</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">email</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#expertIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Expert skilled about a Topic
+
+prev teachingAssistantOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#expertIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is expert in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#followersNumber</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">followers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#followingNumber</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">following number</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#friends</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">firends number</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasEventTag</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Event is marked with a Tag e.g. The hashtag #euro2016 is related to Europe cup 2016
+
+prev researchProject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasEventTag</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has event tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasMember</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a Site with the subscribed Users e.g. A User of Twitter
+
+prev hasAlumnus</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hasMember</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#interestedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is interested in something e.g. A user interested in sport content
+prev takesCourse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#interestedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is interested in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#involvedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is part of a Community e.g. A User of a Site
+
+prev memberOF</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#involvedIn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is involved in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isActiveMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an active User participates to a Site life
+
+prev doctoralDegreeFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isActiveMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is active member of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isFollowedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Influencer is followed by other things e.g. An Influencer is followeb by another User
+
+prev tenured</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isFollowedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is followed by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isInfluencedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is influenced by an Influencer e.g. A User passionate in technology is influenced by Apple account (another User)
+
+prev isadvisedby</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isInfluencedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is being advised by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects Users to Sites
+
+prev hasDegreeFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is member of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isProminentMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a actively involved or technical User participates to a Site life e.g. An Influencer is prominent member of Twitter
+
+prev undergraduateDegreeFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isProminentMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is prominent member of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isReactionTo</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a Reaction is related to the Action.  e.g. A Like related to a MediaPost (Instagram image)
+
+prev softwareVersion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isReactionTo</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is reaction to</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isSharing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev softwaredocumentation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isSharing</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is sharing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTaggedWith</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action contains a Tag e.g. A Post containing a Tag
+
+prev publicationResearch
+not subClass of contains</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isTaggedWith</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is tagged with</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isTechnicalMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a technical User participates to a Site life e.g. A moderator is a technical member of a blog
+
+prev mastersDegreeFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isTechnicalMemberOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is technical  member of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#isVisitedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a Community to its visitors e.g. A Twitter User access Twitter Site to look its timeline
+
+prev member</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#isVisitedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is visited by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#leads</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User leads a Community e.g. A User is the leader of a Discussion
+
+prev headOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#leads</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">leads</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#name</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">name</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#officeNumber</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">office room No.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#participates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is active in a Community e.g. A User of a Site
+
+prev worksFor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#participates</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">participates</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#perfomedOn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous publicationDate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#perfomedOn</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action is performed on something e.g. A Comment is performed on a Post
+
+performed on</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#performedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Specifies that an Action is performed by a User e.g. A User Posts a comment about a Post
+
+previous publicationAuthor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#performedBy</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">performed by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#postsAbout</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a Contributor create a content related to a Topic e.g. A User on Twitter posts a tweet related to Italian Football National Team
+
+prev teacherOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#postsAbout</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">posts about</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#relatedTo</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Spedifies that this Action is related to a particular Reaction e.g. A Like on a Comment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#relatedTo</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">relatedTo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#researchInterest</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is researching</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#subCommunityOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a community to its super-Community e.g. a Discussion is a sub community of a Site
+
+previous lubm:subOrganizationOf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#subCommunityOf</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is sub community of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#username</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">username</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
 
