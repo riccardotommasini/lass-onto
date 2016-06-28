@@ -1,1391 +1,1428 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://streamreasoning.org/onto/lass.owl"
+     xml:base="http://streamreasoning.org/ontologies/lass.owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://streamreasoning.org/onto/lass.owl">
-    <Prefix name="" IRI="http://streamreasoning.org/onto/lass.owl"/>
+     ontologyIRI="http://streamreasoning.org/ontologies/lass.owl#">
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="lass" IRI="http://streamreasoning.org/ontologies/lass.owl#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://purl.org/dc/terms/</Import>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A social media ontology for Stream Reasoning tests</Literal>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-06-28T00:00:00.000+02:00</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Lass Ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2016-04-15T00:00:00.000+02:00</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://creativecommons.org/ns#license"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">https://tldrlegal.com/license/mit-license</Literal>
     </Annotation>
     <Annotation>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lass owl ontology, version 17 April 2016</Literal>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">version 28 june 2016</Literal>
     </Annotation>
     <Annotation>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Lass Ontology</Literal>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">A social media vocabulary for Stream Reasoning Benchmarking</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Riccardo Tommasini - riccardo.tommasini@polimi.it
+Marco Balduini - marco.balduini@polimi.it
+Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
     </Annotation>
     <Declaration>
-        <Class IRI="#Reaction"/>
+        <Class IRI="Site"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#followersNumber"/>
+        <Class IRI="DiscussionLeader"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="friends"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
     </Declaration>
     <Declaration>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Event"/>
+        <ObjectProperty IRI="isSharing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Comment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="TopicFollower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="OpinionMaker"/>
     </Declaration>
     <Declaration>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Contributor"/>
+        <AnnotationProperty IRI="http://creativecommons.org/ns#license"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#username"/>
+        <Class IRI="Topic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Like"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Stakeholder"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="owl:deprecated"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#relatedTo"/>
+        <Class IRI="Community"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#friends"/>
+        <ObjectProperty IRI="relatedTo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Micropost"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="postsAbout"/>
     </Declaration>
     <Declaration>
         <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="isProminentMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasMember"/>
+    </Declaration>
+    <Declaration>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Like"/>
+        <DataProperty IRI="username"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#postsAbout"/>
+        <ObjectProperty IRI="perfomedOn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isVisitedBy"/>
+        <Class IRI="Contributor"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#News"/>
+        <ObjectProperty IRI="isVisitedBy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Micropost"/>
+        <Class IRI="Reaction"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasEventTag"/>
+        <ObjectProperty IRI="involvedIn"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Stakeholder"/>
+        <Class IRI="Tag"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TopicFollower"/>
+        <Class IRI="Concept"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Topic"/>
+        <Class IRI="Discussion"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isInfluencedBy"/>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#OpinionMaker"/>
+        <ObjectProperty IRI="isReactionTo"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TechnicalMember"/>
+        <ObjectProperty IRI="hasEventTag"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#performedBy"/>
+        <Class IRI="User"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Tag"/>
+        <Class IRI="Action"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Involved"/>
+        <ObjectProperty IRI="performedBy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MentionPost"/>
+        <ObjectProperty IRI="subCommunityOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isReactionTo"/>
+        <Class IRI="Post"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#expertIn"/>
+        <Class IRI="Moderator"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Post"/>
+        <Class IRI="VIP"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#interestedIn"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Moderator"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#perfomedOn"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#subCommunityOf"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Discussion"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Action"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TrendingTopic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#TrendingTopicFollower"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#User"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UserGroup"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Influencer"/>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isFollowedBy"/>
+        <Class IRI="News"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#age"/>
+        <ObjectProperty IRI="isTechnicalMemberOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#involvedIn"/>
+        <ObjectProperty IRI="isInfluencedBy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Attendee"/>
+        <ObjectProperty IRI="participates"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Concept"/>
+        <ObjectProperty IRI="interestedIn"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Commercial"/>
+        <Class IRI="TechnicalMember"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Thread"/>
+        <ObjectProperty IRI="expertIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasMember"/>
+        <Class IRI="MentionPost"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Community"/>
+        <Class IRI="Involved"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="leads"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isActiveMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Influencer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="isTaggedWith"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="UserGroup"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#VIP"/>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isActiveMemberOf"/>
+        <DataProperty IRI="emailAddress"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isTechnicalMemberOf"/>
+        <Class IRI="Prominent"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#LegalMember"/>
+        <Class IRI="Event"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isTaggedWith"/>
+        <DataProperty IRI="followersNumber"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isMemberOf"/>
+        <Class IRI="LegalMember"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isProminentMemberOf"/>
+        <Class IRI="MediaPost"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#emailAddress"/>
+        <Class IRI="Attendee"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Site"/>
+        <Class IRI="Maintainer"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#participates"/>
+        <Class IRI="Thread"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#PopularPost"/>
+        <Class IRI="Commercial"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#leads"/>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#isSharing"/>
+        <ObjectProperty IRI="contains"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Comment"/>
+        <Class IRI="Expert"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#MediaPost"/>
+        <ObjectProperty IRI="isFollowedBy"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Maintainer"/>
+        <Class IRI="TrendingTopicFollower"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Prominent"/>
+        <ObjectProperty IRI="isMemberOf"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#contains"/>
+        <Class IRI="TrendingTopic"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#followingNumber"/>
+        <Class IRI="PopularPost"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SharedPost"/>
+        <DataProperty IRI="followingNumber"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#DiscussionLeader"/>
+        <Class IRI="SharedPost"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Expert"/>
+        <DataProperty IRI="age"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="#Comment"/>
+        <Class IRI="Comment"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Post"/>
+            <Class IRI="Post"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isReactionTo"/>
-                <Class IRI="#Action"/>
+                <ObjectProperty IRI="isReactionTo"/>
+                <Class IRI="Action"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#DiscussionLeader"/>
+        <Class IRI="DiscussionLeader"/>
         <ObjectIntersectionOf>
-            <Class IRI="#User"/>
+            <Class IRI="User"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#leads"/>
-                <Class IRI="#Discussion"/>
+                <ObjectProperty IRI="leads"/>
+                <Class IRI="Discussion"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Expert"/>
+        <Class IRI="Expert"/>
         <ObjectIntersectionOf>
-            <Class IRI="#User"/>
+            <Class IRI="User"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#expertIn"/>
-                <Class IRI="#Topic"/>
+                <ObjectProperty IRI="expertIn"/>
+                <Class IRI="Topic"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Moderator"/>
+        <Class IRI="Moderator"/>
         <ObjectIntersectionOf>
-            <Class IRI="#User"/>
+            <Class IRI="User"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#leads"/>
-                <Class IRI="#UserGroup"/>
+                <ObjectProperty IRI="leads"/>
+                <Class IRI="UserGroup"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#OpinionMaker"/>
+        <Class IRI="OpinionMaker"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#leads"/>
-            <Class IRI="#Thread"/>
+            <ObjectProperty IRI="leads"/>
+            <Class IRI="Thread"/>
         </ObjectSomeValuesFrom>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#PopularPost"/>
+        <Class IRI="PopularPost"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Post"/>
+            <Class IRI="Post"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#performedBy"/>
-                <Class IRI="#Influencer"/>
+                <ObjectProperty IRI="performedBy"/>
+                <Class IRI="Influencer"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Prominent"/>
+        <Class IRI="Prominent"/>
         <ObjectIntersectionOf>
-            <Class IRI="#User"/>
+            <Class IRI="User"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#participates"/>
-                <Class IRI="#Community"/>
+                <ObjectProperty IRI="participates"/>
+                <Class IRI="Community"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#SharedPost"/>
+        <Class IRI="SharedPost"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Post"/>
+            <Class IRI="Post"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#isSharing"/>
-                <Class IRI="#Post"/>
+                <ObjectProperty IRI="isSharing"/>
+                <Class IRI="Post"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
-        <Class IRI="#Stakeholder"/>
+        <Class IRI="Stakeholder"/>
         <ObjectIntersectionOf>
-            <Class IRI="#User"/>
+            <Class IRI="User"/>
             <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#interestedIn"/>
-                <Class IRI="#Topic"/>
+                <ObjectProperty IRI="interestedIn"/>
+                <Class IRI="Topic"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#Action"/>
+        <Class IRI="Action"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#performedBy"/>
-            <Class IRI="#User"/>
+            <ObjectProperty IRI="performedBy"/>
+            <Class IRI="User"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Attendee"/>
-        <Class IRI="#User"/>
+        <Class IRI="Attendee"/>
+        <Class IRI="User"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Attendee"/>
+        <Class IRI="Attendee"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#participates"/>
-            <Class IRI="#Event"/>
+            <ObjectProperty IRI="participates"/>
+            <Class IRI="Event"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Comment"/>
-        <Class IRI="#Action"/>
+        <Class IRI="Comment"/>
+        <Class IRI="Action"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Commercial"/>
-        <Class IRI="#Influencer"/>
+        <Class IRI="Commercial"/>
+        <Class IRI="Influencer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Contributor"/>
-        <Class IRI="#Prominent"/>
+        <Class IRI="Contributor"/>
+        <Class IRI="Prominent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Discussion"/>
-        <Class IRI="#Community"/>
+        <Class IRI="Discussion"/>
+        <Class IRI="Community"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#DiscussionLeader"/>
-        <Class IRI="#Influencer"/>
+        <Class IRI="DiscussionLeader"/>
+        <Class IRI="Influencer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Event"/>
-        <Class IRI="#Community"/>
+        <Class IRI="Event"/>
+        <Class IRI="Community"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Influencer"/>
-        <Class IRI="#Contributor"/>
+        <Class IRI="Influencer"/>
+        <Class IRI="Contributor"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Involved"/>
-        <Class IRI="#Contributor"/>
+        <Class IRI="Involved"/>
+        <Class IRI="Contributor"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#LegalMember"/>
-        <Class IRI="#TechnicalMember"/>
+        <Class IRI="LegalMember"/>
+        <Class IRI="TechnicalMember"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Like"/>
-        <Class IRI="#Reaction"/>
+        <Class IRI="Like"/>
+        <Class IRI="Reaction"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Maintainer"/>
-        <Class IRI="#TechnicalMember"/>
+        <Class IRI="Maintainer"/>
+        <Class IRI="TechnicalMember"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MediaPost"/>
-        <Class IRI="#Post"/>
+        <Class IRI="MediaPost"/>
+        <Class IRI="Post"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#MentionPost"/>
-        <Class IRI="#Post"/>
+        <Class IRI="MentionPost"/>
+        <Class IRI="Post"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Micropost"/>
-        <Class IRI="#Post"/>
+        <Class IRI="Micropost"/>
+        <Class IRI="Post"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#News"/>
-        <Class IRI="#Influencer"/>
+        <Class IRI="News"/>
+        <Class IRI="Influencer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#OpinionMaker"/>
-        <Class IRI="#Influencer"/>
+        <Class IRI="OpinionMaker"/>
+        <Class IRI="Influencer"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#PopularPost"/>
-        <Class IRI="#Action"/>
+        <Class IRI="PopularPost"/>
+        <Class IRI="Action"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Post"/>
-        <Class IRI="#Action"/>
+        <Class IRI="Post"/>
+        <Class IRI="Action"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Post"/>
+        <Class IRI="Post"/>
         <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="#performedBy"/>
-            <Class IRI="#User"/>
+            <ObjectProperty IRI="performedBy"/>
+            <Class IRI="User"/>
         </ObjectExactCardinality>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Reaction"/>
-        <Class IRI="#Action"/>
+        <Class IRI="Reaction"/>
+        <Class IRI="Action"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SharedPost"/>
-        <Class IRI="#Action"/>
+        <Class IRI="SharedPost"/>
+        <Class IRI="Action"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Site"/>
-        <Class IRI="#Community"/>
+        <Class IRI="Site"/>
+        <Class IRI="Community"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Tag"/>
-        <Class IRI="#Concept"/>
+        <Class IRI="Tag"/>
+        <Class IRI="Concept"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TechnicalMember"/>
-        <Class IRI="#Prominent"/>
+        <Class IRI="TechnicalMember"/>
+        <Class IRI="Prominent"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Thread"/>
-        <Class IRI="#Community"/>
+        <Class IRI="Thread"/>
+        <Class IRI="Community"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Topic"/>
-        <Class IRI="#Concept"/>
+        <Class IRI="Topic"/>
+        <Class IRI="Concept"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TopicFollower"/>
-        <Class IRI="#Stakeholder"/>
+        <Class IRI="TopicFollower"/>
+        <Class IRI="Stakeholder"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TrendingTopic"/>
-        <Class IRI="#Topic"/>
+        <Class IRI="TrendingTopic"/>
+        <Class IRI="Topic"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TrendingTopicFollower"/>
-        <Class IRI="#User"/>
+        <Class IRI="TrendingTopicFollower"/>
+        <Class IRI="User"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TrendingTopicFollower"/>
+        <Class IRI="TrendingTopicFollower"/>
         <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="#interestedIn"/>
-            <Class IRI="#TrendingTopic"/>
+            <ObjectProperty IRI="interestedIn"/>
+            <Class IRI="TrendingTopic"/>
         </ObjectSomeValuesFrom>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#UserGroup"/>
-        <Class IRI="#Community"/>
+        <Class IRI="UserGroup"/>
+        <Class IRI="Community"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#VIP"/>
-        <Class IRI="#Influencer"/>
+        <Class IRI="VIP"/>
+        <Class IRI="Influencer"/>
     </SubClassOf>
     <DisjointClasses>
-        <Class IRI="#Like"/>
-        <Class IRI="#Post"/>
+        <Class IRI="Like"/>
+        <Class IRI="Post"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="contains"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isActiveMemberOf"/>
-        <ObjectProperty IRI="#isMemberOf"/>
+        <ObjectProperty IRI="isActiveMemberOf"/>
+        <ObjectProperty IRI="isMemberOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isProminentMemberOf"/>
-        <ObjectProperty IRI="#isMemberOf"/>
+        <ObjectProperty IRI="isProminentMemberOf"/>
+        <ObjectProperty IRI="isMemberOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isTaggedWith"/>
-        <ObjectProperty IRI="#contains"/>
+        <ObjectProperty IRI="isTaggedWith"/>
+        <ObjectProperty IRI="contains"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#isTechnicalMemberOf"/>
-        <ObjectProperty IRI="#isMemberOf"/>
+        <ObjectProperty IRI="isTechnicalMemberOf"/>
+        <ObjectProperty IRI="isMemberOf"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#leads"/>
-        <ObjectProperty IRI="#participates"/>
+        <ObjectProperty IRI="leads"/>
+        <ObjectProperty IRI="participates"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#participates"/>
-        <ObjectProperty IRI="#involvedIn"/>
+        <ObjectProperty IRI="participates"/>
+        <ObjectProperty IRI="involvedIn"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasMember"/>
-        <ObjectProperty IRI="#isMemberOf"/>
+        <ObjectProperty IRI="hasMember"/>
+        <ObjectProperty IRI="isMemberOf"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#involvedIn"/>
-        <ObjectProperty IRI="#isVisitedBy"/>
+        <ObjectProperty IRI="involvedIn"/>
+        <ObjectProperty IRI="isVisitedBy"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#isReactionTo"/>
-        <ObjectProperty IRI="#relatedTo"/>
+        <ObjectProperty IRI="isReactionTo"/>
+        <ObjectProperty IRI="relatedTo"/>
     </InverseObjectProperties>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isInfluencedBy"/>
+        <ObjectProperty IRI="isInfluencedBy"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isReactionTo"/>
+        <ObjectProperty IRI="isReactionTo"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#isSharing"/>
+        <ObjectProperty IRI="isSharing"/>
     </TransitiveObjectProperty>
     <TransitiveObjectProperty>
-        <ObjectProperty IRI="#subCommunityOf"/>
+        <ObjectProperty IRI="subCommunityOf"/>
     </TransitiveObjectProperty>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#contains"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="contains"/>
+        <Class IRI="Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#expertIn"/>
-        <Class IRI="#Expert"/>
+        <ObjectProperty IRI="expertIn"/>
+        <Class IRI="Expert"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasEventTag"/>
-        <Class IRI="#Event"/>
+        <ObjectProperty IRI="hasEventTag"/>
+        <Class IRI="Event"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasMember"/>
-        <Class IRI="#Site"/>
+        <ObjectProperty IRI="hasMember"/>
+        <Class IRI="Site"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isActiveMemberOf"/>
-        <Class IRI="#Contributor"/>
+        <ObjectProperty IRI="isActiveMemberOf"/>
+        <Class IRI="Contributor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isFollowedBy"/>
-        <Class IRI="#Influencer"/>
+        <ObjectProperty IRI="isFollowedBy"/>
+        <Class IRI="Influencer"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isInfluencedBy"/>
-        <Class IRI="#User"/>
+        <ObjectProperty IRI="isInfluencedBy"/>
+        <Class IRI="User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isMemberOf"/>
-        <Class IRI="#User"/>
+        <ObjectProperty IRI="isMemberOf"/>
+        <Class IRI="User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isProminentMemberOf"/>
-        <Class IRI="#Prominent"/>
+        <ObjectProperty IRI="isProminentMemberOf"/>
+        <Class IRI="Prominent"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isReactionTo"/>
-        <Class IRI="#Reaction"/>
+        <ObjectProperty IRI="isReactionTo"/>
+        <Class IRI="Reaction"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isSharing"/>
-        <Class IRI="#Reaction"/>
+        <ObjectProperty IRI="isSharing"/>
+        <Class IRI="Reaction"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isTaggedWith"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="isTaggedWith"/>
+        <Class IRI="Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isTechnicalMemberOf"/>
-        <Class IRI="#TechnicalMember"/>
+        <ObjectProperty IRI="isTechnicalMemberOf"/>
+        <Class IRI="TechnicalMember"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#isVisitedBy"/>
-        <Class IRI="#Community"/>
+        <ObjectProperty IRI="isVisitedBy"/>
+        <Class IRI="Community"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#perfomedOn"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="perfomedOn"/>
+        <Class IRI="Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#performedBy"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="performedBy"/>
+        <Class IRI="Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#postsAbout"/>
-        <Class IRI="#Contributor"/>
+        <ObjectProperty IRI="postsAbout"/>
+        <Class IRI="Contributor"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#relatedTo"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="relatedTo"/>
+        <Class IRI="Action"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#subCommunityOf"/>
-        <Class IRI="#Community"/>
+        <ObjectProperty IRI="subCommunityOf"/>
+        <Class IRI="Community"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#expertIn"/>
-        <Class IRI="#Topic"/>
+        <ObjectProperty IRI="expertIn"/>
+        <Class IRI="Topic"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasEventTag"/>
-        <Class IRI="#Tag"/>
+        <ObjectProperty IRI="hasEventTag"/>
+        <Class IRI="Tag"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasMember"/>
-        <Class IRI="#User"/>
+        <ObjectProperty IRI="hasMember"/>
+        <Class IRI="User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isActiveMemberOf"/>
-        <Class IRI="#Site"/>
+        <ObjectProperty IRI="isActiveMemberOf"/>
+        <Class IRI="Site"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isInfluencedBy"/>
-        <Class IRI="#Influencer"/>
+        <ObjectProperty IRI="isInfluencedBy"/>
+        <Class IRI="Influencer"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isMemberOf"/>
-        <Class IRI="#Site"/>
+        <ObjectProperty IRI="isMemberOf"/>
+        <Class IRI="Site"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isProminentMemberOf"/>
-        <Class IRI="#Site"/>
+        <ObjectProperty IRI="isProminentMemberOf"/>
+        <Class IRI="Site"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isReactionTo"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="isReactionTo"/>
+        <Class IRI="Action"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isSharing"/>
-        <Class IRI="#Action"/>
+        <ObjectProperty IRI="isSharing"/>
+        <Class IRI="Action"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isTaggedWith"/>
-        <Class IRI="#Tag"/>
+        <ObjectProperty IRI="isTaggedWith"/>
+        <Class IRI="Tag"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isTechnicalMemberOf"/>
-        <Class IRI="#Site"/>
+        <ObjectProperty IRI="isTechnicalMemberOf"/>
+        <Class IRI="Site"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#isVisitedBy"/>
-        <Class IRI="#User"/>
+        <ObjectProperty IRI="isVisitedBy"/>
+        <Class IRI="User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#performedBy"/>
-        <Class IRI="#User"/>
+        <ObjectProperty IRI="performedBy"/>
+        <Class IRI="User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#postsAbout"/>
-        <Class IRI="#Topic"/>
+        <ObjectProperty IRI="postsAbout"/>
+        <Class IRI="Topic"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#relatedTo"/>
-        <Class IRI="#Reaction"/>
+        <ObjectProperty IRI="relatedTo"/>
+        <Class IRI="Reaction"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#subCommunityOf"/>
-        <Class IRI="#Community"/>
+        <ObjectProperty IRI="subCommunityOf"/>
+        <Class IRI="Community"/>
     </ObjectPropertyRange>
     <SubObjectPropertyOf>
         <ObjectPropertyChain>
             <ObjectInverseOf>
-                <ObjectProperty IRI="#performedBy"/>
+                <ObjectProperty IRI="performedBy"/>
             </ObjectInverseOf>
-            <ObjectProperty IRI="#contains"/>
+            <ObjectProperty IRI="contains"/>
         </ObjectPropertyChain>
-        <ObjectProperty IRI="#postsAbout"/>
+        <ObjectProperty IRI="postsAbout"/>
     </SubObjectPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="#friends"/>
+        <DataProperty IRI="friends"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
-        <DataProperty IRI="#age"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="age"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#emailAddress"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="emailAddress"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#followersNumber"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="followersNumber"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#followingNumber"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="followingNumber"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#friends"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="friends"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#username"/>
-        <Class IRI="#User"/>
+        <DataProperty IRI="username"/>
+        <Class IRI="User"/>
     </DataPropertyDomain>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Action</IRI>
+        <IRI>Action</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An action performed by an user within a community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Action</IRI>
+        <IRI>Action</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Action</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Action</IRI>
+        <IRI>Action</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/Action</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Attendee</IRI>
+        <IRI>Attendee</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who attends an event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Attendee</IRI>
+        <IRI>Attendee</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Attendee</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Comment</IRI>
+        <IRI>Comment</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specific kind of posts that belongs to other post to exist</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Comment</IRI>
+        <IRI>Comment</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Comment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Comment</IRI>
+        <IRI>Comment</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#Comment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Commercial</IRI>
+        <IRI>Commercial</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account that belongs to a commercial activity e.g. a page on Facebook</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Commercial</IRI>
+        <IRI>Commercial</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Special Influencer that act for commercialpurposes</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Community</IRI>
+        <IRI>Community</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Community may consist of people, sites, discussion, topics, threads, events joined by a common topic, interests or goals.
 
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Community</IRI>
+        <IRI>Community</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:organization
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Community</IRI>
+        <IRI>Community</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Community</IRI>
+        <IRI>Community</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Concept</IRI>
+        <IRI>Concept</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:Work</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Concept</IRI>
+        <IRI>Concept</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Concept</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Contributor</IRI>
+        <IRI>Contributor</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who actively participates into a community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Contributor</IRI>
+        <IRI>Contributor</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Contributor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Discussion</IRI>
+        <IRI>Discussion</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">In a discussion users have the option of responding to one another directly. 
 There may be a general topic. A discussion is a group conversation with simultaneous side conversations.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Discussion</IRI>
+        <IRI>Discussion</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Discussion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#DiscussionLeader</IRI>
+        <IRI>DiscussionLeader</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who introduces topic of discussion and leads the discussion.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#DiscussionLeader</IRI>
+        <IRI>DiscussionLeader</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">DiscussionLeader</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Event</IRI>
+        <IRI>Event</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Something that occurs in a certain place during a particular time:</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Event</IRI>
+        <IRI>Event</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Event</IRI>
+        <IRI>Event</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/Event</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Expert</IRI>
+        <IRI>Expert</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A person who has special skill or knowledge in a particular field.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Expert</IRI>
+        <IRI>Expert</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Expert</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Influencer</IRI>
+        <IRI>Influencer</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who can influence other users in the community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Influencer</IRI>
+        <IRI>Influencer</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Influencer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Involved</IRI>
+        <IRI>Involved</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user who is involved in a discussion.
 
 http://www.wordreference.com/definition/involved</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Involved</IRI>
+        <IRI>Involved</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">involved</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#LegalMember</IRI>
+        <IRI>LegalMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A User that is involved in the legal staff of a Community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#LegalMember</IRI>
+        <IRI>LegalMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Legal</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Like</IRI>
+        <IRI>Like</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">High Level representation of a Like reaction to a social media content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Like</IRI>
+        <IRI>Like</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Like</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Like</IRI>
+        <IRI>Like</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://schema.org/UserLikes</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Maintainer</IRI>
+        <IRI>Maintainer</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A User that actively and technically mantain a Community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Maintainer</IRI>
+        <IRI>Maintainer</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Maintainer</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MediaPost</IRI>
+        <IRI>MediaPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A post that contains an Image/Video/Audio like http://schema.org/MediaObject</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MediaPost</IRI>
+        <IRI>MediaPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MediaPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#MentionPost</IRI>
+        <IRI>MentionPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Post that contains an user as content </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#MentionPost</IRI>
+        <IRI>MentionPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MentionPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Micropost</IRI>
+        <IRI>Micropost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MicroPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Micropost</IRI>
+        <IRI>Micropost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#MicroblogPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Moderator</IRI>
+        <IRI>Moderator</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who presides an Usergroup.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Moderator</IRI>
+        <IRI>Moderator</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Director</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Moderator</IRI>
+        <IRI>Moderator</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Moderator</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#News</IRI>
+        <IRI>News</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account who officially posts news and press articles</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#News</IRI>
+        <IRI>News</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">News Account</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#OpinionMaker</IRI>
+        <IRI>OpinionMaker</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Person who introduces a sub-topic in a discussion, opens a thread, and leads the thread .</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#OpinionMaker</IRI>
+        <IRI>OpinionMaker</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">dean</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#PopularPost</IRI>
+        <IRI>PopularPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A post that is become popular for the discussion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#PopularPost</IRI>
+        <IRI>PopularPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">PopularPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Post</IRI>
+        <IRI>Post</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Post</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Post</IRI>
+        <IRI>Post</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Post is an action performed by a User that contains topic, text, tags or metions. A series of Posts may be a thread/discussion if they share a common topic and are connected by reply or by date relationships.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Post</IRI>
+        <IRI>Post</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Post</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Prominent</IRI>
+        <IRI>Prominent</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user with a particular role within a community</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Prominent</IRI>
+        <IRI>Prominent</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev Employee</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Prominent</IRI>
+        <IRI>Prominent</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Prominent</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Reaction</IRI>
+        <IRI>Reaction</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">High Level representation of a reaction to a social media content</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Reaction</IRI>
+        <IRI>Reaction</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Reaction</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Reaction</IRI>
+        <IRI>Reaction</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A reaction is an action performed by a User that is related to another action and so it logically happens after.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#SharedPost</IRI>
+        <IRI>SharedPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Shared Post is an action performed by a User that contains a post previously performed by another user, so it logically happens after the original post.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#SharedPost</IRI>
+        <IRI>SharedPost</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SharedPost</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Site</IRI>
+        <IRI>Site</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Site can be the location of an online community or set of communities.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Site</IRI>
+        <IRI>Site</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Site</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Site</IRI>
+        <IRI>Site</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Site</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Stakeholder</IRI>
+        <IRI>Stakeholder</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user who is interest in some topic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Stakeholder</IRI>
+        <IRI>Stakeholder</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Stakeholder</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Tag</IRI>
+        <IRI>Tag</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Tag is a particular word (or group of word) that characterize a social media content e.g. #happy</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Tag</IRI>
+        <IRI>Tag</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Tag</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Tag</IRI>
+        <IRI>Tag</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/types#Tag</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TechnicalMember</IRI>
+        <IRI>TechnicalMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user whose technical skills are appreciated/used by the community, e.g. a website maintainer.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TechnicalMember</IRI>
+        <IRI>TechnicalMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TechnicalMember</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Thread</IRI>
+        <IRI>Thread</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">In a  discussion, subtopics emerge as users respond to specific postings. These secondary postings are the &quot;threads&quot; that spin off from the main discussion.
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Thread</IRI>
+        <IRI>Thread</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Thread</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#Thread</IRI>
+        <IRI>Thread</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Thread</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#Topic</IRI>
+        <IRI>Topic</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">High level representation if a subject of discussion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#Topic</IRI>
+        <IRI>Topic</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Topic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TopicFollower</IRI>
+        <IRI>TopicFollower</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A user who is interested in a specific topic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TopicFollower</IRI>
+        <IRI>TopicFollower</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TopicFollower</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TrendingTopic</IRI>
+        <IRI>TrendingTopic</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A popular subject of discussion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TrendingTopic</IRI>
+        <IRI>TrendingTopic</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TrendingTopic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#TrendingTopicFollower</IRI>
+        <IRI>TrendingTopicFollower</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">an user who is interested in a trending topic</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#TrendingTopicFollower</IRI>
+        <IRI>TrendingTopicFollower</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">TT Follower</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#User</IRI>
+        <IRI>User</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user account in an online community site. 
 
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#User</IRI>
+        <IRI>User</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous lubm:Person
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#User</IRI>
+        <IRI>User</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">User</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#User</IRI>
+        <IRI>User</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_UserAccount</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#UserGroup</IRI>
+        <IRI>UserGroup</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A set of UserAccounts whose owners have a common purpose or interest. Can be used for access control purposes. 
 
 </Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#UserGroup</IRI>
+        <IRI>UserGroup</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Usergroup</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:seeAlso"/>
-        <IRI>#UserGroup</IRI>
+        <IRI>UserGroup</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://rdfs.org/sioc/spec/#term_Usergroup</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#VIP</IRI>
+        <IRI>VIP</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An user that is popular either within the community, e.g. an account with 1Bilion followers on twitter, or who is popular outside like a MoiveStar.</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#VIP</IRI>
+        <IRI>VIP</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">vip</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#age</IRI>
+        <IRI>age</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is age</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#contains</IRI>
+        <IRI>contains</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action contains another generic entity e.g. A Post containing the citation of another Post
 
 prev None</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#contains</IRI>
+        <IRI>contains</IRI>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">contains</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#emailAddress</IRI>
+        <IRI>emailAddress</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">email</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#expertIn</IRI>
+        <IRI>expertIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Expert skilled about a Topic
 
 prev teachingAssistantOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#expertIn</IRI>
+        <IRI>expertIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is expert in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#followersNumber</IRI>
+        <IRI>followersNumber</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">followers</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#followingNumber</IRI>
+        <IRI>followingNumber</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">following number</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#friends</IRI>
+        <IRI>friends</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">firends number</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasEventTag</IRI>
+        <IRI>hasEventTag</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Event is marked with a Tag e.g. The hashtag #euro2016 is related to Europe cup 2016</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasEventTag</IRI>
+        <IRI>hasEventTag</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has event tag</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#hasMember</IRI>
+        <IRI>hasMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a Site with the subscribed Users e.g. A User of Twitter
 
 prev hasAlumnus</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#hasMember</IRI>
+        <IRI>hasMember</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">has member</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#interestedIn</IRI>
+        <IRI>interestedIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is interested in something e.g. A user interested in sport content
 prev takesCourse</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#interestedIn</IRI>
+        <IRI>interestedIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is interested in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#involvedIn</IRI>
+        <IRI>involvedIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is part of a Community e.g. A User of a Site
 
 prev memberOF</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#involvedIn</IRI>
+        <IRI>involvedIn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is involved in</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isActiveMemberOf</IRI>
+        <IRI>isActiveMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an active User participates to a Site life
 
 prev doctoralDegreeFrom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isActiveMemberOf</IRI>
+        <IRI>isActiveMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is active member of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isFollowedBy</IRI>
+        <IRI>isFollowedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Influencer is followed by other things e.g. An Influencer is followeb by another User
 
 prev tenured</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isFollowedBy</IRI>
+        <IRI>isFollowedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is followed by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isInfluencedBy</IRI>
+        <IRI>isInfluencedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is influenced by an Influencer e.g. A User passionate in technology is influenced by Apple account (another User)
 
 prev isadvisedby</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isInfluencedBy</IRI>
+        <IRI>isInfluencedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is being advised by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isMemberOf</IRI>
+        <IRI>isMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects Users to Sites
 
 prev hasDegreeFrom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isMemberOf</IRI>
+        <IRI>isMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is member of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isProminentMemberOf</IRI>
+        <IRI>isProminentMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a actively involved or technical User participates to a Site life e.g. An Influencer is prominent member of Twitter
 
 prev undergraduateDegreeFrom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isProminentMemberOf</IRI>
+        <IRI>isProminentMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is prominent member of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isReactionTo</IRI>
+        <IRI>isReactionTo</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a Reaction is related to the Action.  e.g. A Like related to a MediaPost (Instagram image)
 
 prev softwareVersion</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isReactionTo</IRI>
+        <IRI>isReactionTo</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is reaction to</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isSharing</IRI>
+        <IRI>isSharing</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">prev softwaredocumentation</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isSharing</IRI>
+        <IRI>isSharing</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is sharing</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isTaggedWith</IRI>
+        <IRI>isTaggedWith</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action contains a Tag e.g. A Post containing a Tag
 
 prev publicationResearch
@@ -1393,133 +1430,118 @@ not subClass of contains</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isTaggedWith</IRI>
+        <IRI>isTaggedWith</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is tagged with</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isTechnicalMemberOf</IRI>
+        <IRI>isTechnicalMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a technical User participates to a Site life e.g. A moderator is a technical member of a blog
 
 prev mastersDegreeFrom</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isTechnicalMemberOf</IRI>
+        <IRI>isTechnicalMemberOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is technical  member of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#isVisitedBy</IRI>
+        <IRI>isVisitedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a Community to its visitors e.g. A Twitter User access Twitter Site to look its timeline
 
 prev member</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#isVisitedBy</IRI>
+        <IRI>isVisitedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is visited by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#leads</IRI>
+        <IRI>leads</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User leads a Community e.g. A User is the leader of a Discussion
 
 prev headOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#leads</IRI>
+        <IRI>leads</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">leads</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#name</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">name</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#officeNumber</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">office room No.</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#participates</IRI>
+        <IRI>participates</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a User is active in a Community e.g. A User of a Site
 
 prev worksFor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#participates</IRI>
+        <IRI>participates</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">participates</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#perfomedOn</IRI>
+        <IRI>perfomedOn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">previous publicationDate</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#perfomedOn</IRI>
+        <IRI>perfomedOn</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that an Action is performed on something e.g. A Comment is performed on a Post
 
 performed on</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#performedBy</IRI>
+        <IRI>performedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Specifies that an Action is performed by a User e.g. A User Posts a comment about a Post
 
 previous publicationAuthor</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#performedBy</IRI>
+        <IRI>performedBy</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">performed by</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#postsAbout</IRI>
+        <IRI>postsAbout</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Specifies that a Contributor create a content related to a Topic e.g. A User on Twitter posts a tweet related to Italian Football National Team
 
 prev teacherOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#postsAbout</IRI>
+        <IRI>postsAbout</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">posts about</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#relatedTo</IRI>
+        <IRI>relatedTo</IRI>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Spedifies that this Action is related to a particular Reaction e.g. A Like on a Comment</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#relatedTo</IRI>
+        <IRI>relatedTo</IRI>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">relatedTo</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
-        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#researchInterest</IRI>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is researching</Literal>
-    </AnnotationAssertion>
-    <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
-        <IRI>#subCommunityOf</IRI>
+        <IRI>subCommunityOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Connects a community to its super-Community e.g. a Discussion is a sub community of a Site
 
 previous lubm:subOrganizationOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#subCommunityOf</IRI>
+        <IRI>subCommunityOf</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">is sub community of</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>#username</IRI>
+        <IRI>username</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">username</Literal>
     </AnnotationAssertion>
 </Ontology>

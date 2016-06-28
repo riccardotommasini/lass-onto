@@ -1,0 +1,1054 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://streamreasoning.org/ontologies/lass.owl#"
+     xml:base="http://streamreasoning.org/ontologies/lass.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:lass="http://streamreasoning.org/ontologies/lass.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://streamreasoning.org/ontologies/lass.owl#">
+        <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-06-28T00:00:00.000+02:00</terms:modified>
+        <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lass Ontology</dc:title>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2016-04-15T00:00:00.000+02:00</terms:issued>
+        <ns:license rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://tldrlegal.com/license/mit-license</ns:license>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">version 28 june 2016</owl:versionInfo>
+        <dc:description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A social media vocabulary for Stream Reasoning Benchmarking</dc:description>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Riccardo Tommasini - riccardo.tommasini@polimi.it
+Marco Balduini - marco.balduini@polimi.it
+Emanuele Della Valle - emanuele.dellavalle@polimi.it</dc:creator>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#deprecated -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#deprecated"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#priorVersion -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#priorVersion"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral"/>
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#boolean -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#boolean"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#contains">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>Specifies that an Action contains another generic entity e.g. A Post containing the citation of another Post
+
+prev None</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#expertIn -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#expertIn">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Expert"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Topic"/>
+        <rdfs:comment>Specifies that an Expert skilled about a Topic
+
+prev teachingAssistantOf</rdfs:comment>
+        <rdfs:label>is expert in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#hasEventTag -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#hasEventTag">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Event"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Tag"/>
+        <rdfs:comment>Specifies that an Event is marked with a Tag e.g. The hashtag #euro2016 is related to Europe cup 2016</rdfs:comment>
+        <rdfs:label>has event tag</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#hasMember -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#hasMember">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Site"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:comment>Connects a Site with the subscribed Users e.g. A User of Twitter
+
+prev hasAlumnus</rdfs:comment>
+        <rdfs:label>has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#interestedIn -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#interestedIn">
+        <rdfs:comment>Specifies that a User is interested in something e.g. A user interested in sport content
+prev takesCourse</rdfs:comment>
+        <rdfs:label>is interested in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#involvedIn -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#involvedIn">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isVisitedBy"/>
+        <rdfs:comment>Specifies that a User is part of a Community e.g. A User of a Site
+
+prev memberOF</rdfs:comment>
+        <rdfs:label>is involved in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isActiveMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isActiveMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Contributor"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Site"/>
+        <rdfs:comment>Specifies that an active User participates to a Site life
+
+prev doctoralDegreeFrom</rdfs:comment>
+        <rdfs:label>is active member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isFollowedBy">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>Specifies that an Influencer is followed by other things e.g. An Influencer is followeb by another User
+
+prev tenured</rdfs:comment>
+        <rdfs:label>is followed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isInfluencedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>Specifies that a User is influenced by an Influencer e.g. A User passionate in technology is influenced by Apple account (another User)
+
+prev isadvisedby</rdfs:comment>
+        <rdfs:label>is being advised by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isMemberOf">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Site"/>
+        <rdfs:comment>Connects Users to Sites
+
+prev hasDegreeFrom</rdfs:comment>
+        <rdfs:label>is member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isProminentMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isProminentMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Prominent"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Site"/>
+        <rdfs:comment>Specifies that a actively involved or technical User participates to a Site life e.g. An Influencer is prominent member of Twitter
+
+prev undergraduateDegreeFrom</rdfs:comment>
+        <rdfs:label>is prominent member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isReactionTo -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isReactionTo">
+        <owl:inverseOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#relatedTo"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Reaction"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>Specifies that a Reaction is related to the Action.  e.g. A Like related to a MediaPost (Instagram image)
+
+prev softwareVersion</rdfs:comment>
+        <rdfs:label>is reaction to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isSharing -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isSharing">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Reaction"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>prev softwaredocumentation</rdfs:comment>
+        <rdfs:label>is sharing</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isTaggedWith -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isTaggedWith">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#contains"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Tag"/>
+        <rdfs:comment>Specifies that an Action contains a Tag e.g. A Post containing a Tag
+
+prev publicationResearch
+not subClass of contains</rdfs:comment>
+        <rdfs:label>is tagged with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isTechnicalMemberOf -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isTechnicalMemberOf">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isMemberOf"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#TechnicalMember"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Site"/>
+        <rdfs:comment>Specifies that a technical User participates to a Site life e.g. A moderator is a technical member of a blog
+
+prev mastersDegreeFrom</rdfs:comment>
+        <rdfs:label>is technical  member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#isVisitedBy -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#isVisitedBy">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:comment>Connects a Community to its visitors e.g. A Twitter User access Twitter Site to look its timeline
+
+prev member</rdfs:comment>
+        <rdfs:label>is visited by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#leads -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#leads">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#participates"/>
+        <rdfs:comment>Specifies that a User leads a Community e.g. A User is the leader of a Discussion
+
+prev headOf</rdfs:comment>
+        <rdfs:label>leads</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#participates -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#participates">
+        <rdfs:subPropertyOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#involvedIn"/>
+        <rdfs:comment>Specifies that a User is active in a Community e.g. A User of a Site
+
+prev worksFor</rdfs:comment>
+        <rdfs:label>participates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#perfomedOn -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#perfomedOn">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>previous publicationDate</rdfs:comment>
+        <rdfs:label>Specifies that an Action is performed on something e.g. A Comment is performed on a Post
+
+performed on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#performedBy -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#performedBy">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Specifies that an Action is performed by a User e.g. A User Posts a comment about a Post
+
+previous publicationAuthor</rdfs:comment>
+        <rdfs:label>performed by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#postsAbout -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#postsAbout">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Contributor"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Topic"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description>
+                <owl:inverseOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#performedBy"/>
+            </rdf:Description>
+            <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#contains"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment>Specifies that a Contributor create a content related to a Topic e.g. A User on Twitter posts a tweet related to Italian Football National Team
+
+prev teacherOf</rdfs:comment>
+        <rdfs:label>posts about</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#relatedTo">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Reaction"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spedifies that this Action is related to a particular Reaction e.g. A Like on a Comment</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">relatedTo</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#subCommunityOf -->
+
+    <owl:ObjectProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#subCommunityOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:range rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>Connects a community to its super-Community e.g. a Discussion is a sub community of a Site
+
+previous lubm:subOrganizationOf</rdfs:comment>
+        <rdfs:label>is sub community of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#age">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>is age</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#emailAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#emailAddress">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>email</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#followersNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#followersNumber">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>followers</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#followingNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#followingNumber">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>following number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#friends -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#friends">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>firends number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#username -->
+
+    <owl:DatatypeProperty rdf:about="http://streamreasoning.org/ontologies/lass.owl#username">
+        <rdfs:domain rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:label>username</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Action -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Action">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#performedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An action performed by an user within a community</rdfs:comment>
+        <rdfs:label>Action</rdfs:label>
+        <rdfs:seeAlso>http://schema.org/Action</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Attendee -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Attendee">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#participates"/>
+                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Event"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>An user who attends an event</rdfs:comment>
+        <rdfs:label>Attendee</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Comment -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Comment">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isReactionTo"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>Specific kind of posts that belongs to other post to exist</rdfs:comment>
+        <rdfs:label>Comment</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/types#Comment</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Commercial -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Commercial">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>An user account that belongs to a commercial activity e.g. a page on Facebook</rdfs:comment>
+        <rdfs:comment>Special Influencer that act for commercialpurposes</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Community -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Community">
+        <rdfs:comment>A Community may consist of people, sites, discussion, topics, threads, events joined by a common topic, interests or goals.
+
+</rdfs:comment>
+        <rdfs:comment>previous lubm:organization
+</rdfs:comment>
+        <rdfs:label>Community</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Community</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Concept -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Concept">
+        <rdfs:comment>previous lubm:Work</rdfs:comment>
+        <rdfs:label>Concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Contributor -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Contributor">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Prominent"/>
+        <rdfs:comment>An user who actively participates into a community</rdfs:comment>
+        <rdfs:label>Contributor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Discussion -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Discussion">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>In a discussion users have the option of responding to one another directly. 
+There may be a general topic. A discussion is a group conversation with simultaneous side conversations.</rdfs:comment>
+        <rdfs:label>Discussion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#DiscussionLeader -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#DiscussionLeader">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#User"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#leads"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Discussion"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>Person who introduces topic of discussion and leads the discussion.</rdfs:comment>
+        <rdfs:label>DiscussionLeader</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Event -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Event">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>Something that occurs in a certain place during a particular time:</rdfs:comment>
+        <rdfs:label>Event</rdfs:label>
+        <rdfs:seeAlso>http://schema.org/Event</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Expert -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Expert">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#User"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#expertIn"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Topic"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A person who has special skill or knowledge in a particular field.</rdfs:comment>
+        <rdfs:label>Expert</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Influencer -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Influencer">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Contributor"/>
+        <rdfs:comment>An user who can influence other users in the community</rdfs:comment>
+        <rdfs:label>Influencer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Involved -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Involved">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Contributor"/>
+        <rdfs:comment>An user who is involved in a discussion.
+
+http://www.wordreference.com/definition/involved</rdfs:comment>
+        <rdfs:label>involved</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#LegalMember -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#LegalMember">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#TechnicalMember"/>
+        <rdfs:comment>A User that is involved in the legal staff of a Community</rdfs:comment>
+        <rdfs:label>Legal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Like -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Like">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Reaction"/>
+        <owl:disjointWith rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+        <rdfs:comment>High Level representation of a Like reaction to a social media content</rdfs:comment>
+        <rdfs:label>Like</rdfs:label>
+        <rdfs:seeAlso>http://schema.org/UserLikes</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Maintainer -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Maintainer">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#TechnicalMember"/>
+        <rdfs:comment>A User that actively and technically mantain a Community</rdfs:comment>
+        <rdfs:label>Maintainer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#MediaPost -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#MediaPost">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+        <rdfs:comment>A post that contains an Image/Video/Audio like http://schema.org/MediaObject</rdfs:comment>
+        <rdfs:label>MediaPost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#MentionPost -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#MentionPost">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+        <rdfs:comment>A Post that contains an user as content </rdfs:comment>
+        <rdfs:label>MentionPost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Micropost -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Micropost">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+        <rdfs:label>MicroPost</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/types#MicroblogPost</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Moderator -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Moderator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#User"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#leads"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#UserGroup"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Person who presides an Usergroup.</rdfs:comment>
+        <rdfs:comment>prev Director</rdfs:comment>
+        <rdfs:label>Moderator</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#News -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#News">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>An user account who officially posts news and press articles</rdfs:comment>
+        <rdfs:label>News Account</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#OpinionMaker -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#OpinionMaker">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#leads"/>
+                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Thread"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>Person who introduces a sub-topic in a discussion, opens a thread, and leads the thread .</rdfs:comment>
+        <rdfs:label>dean</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#PopularPost -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#PopularPost">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#performedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>A post that is become popular for the discussion</rdfs:comment>
+        <rdfs:label>PopularPost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Post -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Post">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#performedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Post</rdfs:label>
+        <rdfs:seeAlso>A Post is an action performed by a User that contains topic, text, tags or metions. A series of Posts may be a thread/discussion if they share a common topic and are connected by reply or by date relationships.</rdfs:seeAlso>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Post</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Prominent -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Prominent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#User"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#participates"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>An user with a particular role within a community</rdfs:comment>
+        <rdfs:comment>prev Employee</rdfs:comment>
+        <rdfs:label>Prominent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Reaction -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Reaction">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>High Level representation of a reaction to a social media content</rdfs:comment>
+        <rdfs:label>Reaction</rdfs:label>
+        <rdfs:seeAlso>A reaction is an action performed by a User that is related to another action and so it logically happens after.</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#SharedPost -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#SharedPost">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#isSharing"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Post"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Action"/>
+        <rdfs:comment>A Shared Post is an action performed by a User that contains a post previously performed by another user, so it logically happens after the original post.</rdfs:comment>
+        <rdfs:label>SharedPost</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Site -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Site">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>A Site can be the location of an online community or set of communities.</rdfs:comment>
+        <rdfs:label>Site</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Site</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Stakeholder -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Stakeholder">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://streamreasoning.org/ontologies/lass.owl#User"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#interestedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Topic"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A user who is interest in some topic</rdfs:comment>
+        <rdfs:label>Stakeholder</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Tag -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Tag">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Concept"/>
+        <rdfs:comment>A Tag is a particular word (or group of word) that characterize a social media content e.g. #happy</rdfs:comment>
+        <rdfs:label>Tag</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/types#Tag</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#TechnicalMember -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#TechnicalMember">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Prominent"/>
+        <rdfs:comment>A user whose technical skills are appreciated/used by the community, e.g. a website maintainer.</rdfs:comment>
+        <rdfs:label>TechnicalMember</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Thread -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Thread">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>In a  discussion, subtopics emerge as users respond to specific postings. These secondary postings are the &quot;threads&quot; that spin off from the main discussion.
+</rdfs:comment>
+        <rdfs:label>Thread</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Thread</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#Topic -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#Topic">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Concept"/>
+        <rdfs:comment>High level representation if a subject of discussion</rdfs:comment>
+        <rdfs:label>Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#TopicFollower -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#TopicFollower">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Stakeholder"/>
+        <rdfs:comment>A user who is interested in a specific topic</rdfs:comment>
+        <rdfs:label>TopicFollower</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#TrendingTopic -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#TrendingTopic">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Topic"/>
+        <rdfs:comment>A popular subject of discussion</rdfs:comment>
+        <rdfs:label>TrendingTopic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#TrendingTopicFollower -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#TrendingTopicFollower">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#User"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://streamreasoning.org/ontologies/lass.owl#interestedIn"/>
+                <owl:someValuesFrom rdf:resource="http://streamreasoning.org/ontologies/lass.owl#TrendingTopic"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>an user who is interested in a trending topic</rdfs:comment>
+        <rdfs:label>TT Follower</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#User -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#User">
+        <rdfs:comment>An user account in an online community site. 
+
+</rdfs:comment>
+        <rdfs:comment>previous lubm:Person
+</rdfs:comment>
+        <rdfs:label>User</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_UserAccount</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#UserGroup -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#UserGroup">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Community"/>
+        <rdfs:comment>A set of UserAccounts whose owners have a common purpose or interest. Can be used for access control purposes. 
+
+</rdfs:comment>
+        <rdfs:label>Usergroup</rdfs:label>
+        <rdfs:seeAlso>http://rdfs.org/sioc/spec/#term_Usergroup</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://streamreasoning.org/ontologies/lass.owl#VIP -->
+
+    <owl:Class rdf:about="http://streamreasoning.org/ontologies/lass.owl#VIP">
+        <rdfs:subClassOf rdf:resource="http://streamreasoning.org/ontologies/lass.owl#Influencer"/>
+        <rdfs:comment>An user that is popular either within the community, e.g. an account with 1Bilion followers on twitter, or who is popular outside like a MoiveStar.</rdfs:comment>
+        <rdfs:label>vip</rdfs:label>
+    </owl:Class>
+    
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
