@@ -6,6 +6,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://streamreasoning.org/ontologies/lass.owl#">
+    <Prefix name="" IRI="http://streamreasoning.org/ontologies/lass.owl#"/>
     <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
@@ -51,9 +52,6 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <Class IRI="DiscussionLeader"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="friends"/>
-    </Declaration>
-    <Declaration>
         <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
     </Declaration>
     <Declaration>
@@ -78,10 +76,10 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <AnnotationProperty IRI="http://creativecommons.org/ns#license"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Topic"/>
+        <Class IRI="Like"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Like"/>
+        <Class IRI="Topic"/>
     </Declaration>
     <Declaration>
         <Class IRI="Stakeholder"/>
@@ -105,13 +103,13 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <ObjectProperty IRI="postsAbout"/>
     </Declaration>
     <Declaration>
-        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="isProminentMemberOf"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="hasMember"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="rdf:PlainLiteral"/>
     </Declaration>
     <Declaration>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
@@ -153,10 +151,10 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <ObjectProperty IRI="hasEventTag"/>
     </Declaration>
     <Declaration>
-        <Class IRI="User"/>
+        <Class IRI="Action"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Action"/>
+        <Class IRI="User"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="performedBy"/>
@@ -174,10 +172,10 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <Class IRI="VIP"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="owl:priorVersion"/>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
     </Declaration>
     <Declaration>
         <Class IRI="News"/>
@@ -225,16 +223,16 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
     </Declaration>
     <Declaration>
-        <AnnotationProperty abbreviatedIRI="dc:creator"/>
-    </Declaration>
-    <Declaration>
         <DataProperty IRI="emailAddress"/>
     </Declaration>
     <Declaration>
-        <Class IRI="Prominent"/>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
     </Declaration>
     <Declaration>
         <Class IRI="Event"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Prominent"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="followersNumber"/>
@@ -261,6 +259,9 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="performs"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="contains"/>
     </Declaration>
     <Declaration>
@@ -285,10 +286,13 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <DataProperty IRI="followingNumber"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="age"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="SharedPost"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="age"/>
+        <DataProperty IRI="friendsnNumber"/>
     </Declaration>
     <EquivalentClasses>
         <Class IRI="Comment"/>
@@ -627,7 +631,7 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="isSharing"/>
-        <Class IRI="Reaction"/>
+        <Class IRI="SharedPost"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="isTaggedWith"/>
@@ -648,6 +652,10 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="performedBy"/>
         <Class IRI="Action"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="performs"/>
+        <Class IRI="User"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="postsAbout"/>
@@ -714,6 +722,10 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <Class IRI="User"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="performs"/>
+        <Class IRI="Action"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="postsAbout"/>
         <Class IRI="Topic"/>
     </ObjectPropertyRange>
@@ -735,7 +747,7 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <ObjectProperty IRI="postsAbout"/>
     </SubObjectPropertyOf>
     <SubDataPropertyOf>
-        <DataProperty IRI="friends"/>
+        <DataProperty IRI="friendsnNumber"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
     <DataPropertyDomain>
@@ -755,13 +767,37 @@ Emanuele Della Valle - emanuele.dellavalle@polimi.it</Literal>
         <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="friends"/>
+        <DataProperty IRI="friendsnNumber"/>
         <Class IRI="User"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="username"/>
         <Class IRI="User"/>
     </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="age"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="emailAddress"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="followersNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="followingNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="friendsnNumber"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="username"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
         <IRI>Action</IRI>
@@ -1290,7 +1326,7 @@ prev teachingAssistantOf</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
         <AnnotationProperty abbreviatedIRI="rdfs:label"/>
-        <IRI>friends</IRI>
+        <IRI>friendsnNumber</IRI>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">firends number</Literal>
     </AnnotationAssertion>
     <AnnotationAssertion>
